@@ -23,7 +23,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "ncc ./src/index.ts -w -o ./dist/",
+    "dev": "ncc build ./src/index.ts -w -o ./dist/",
     "release": "ncc build ./src/index.ts -o ./dist/ --minify --no-cache --no-source-map-register",
     "build": "npm run release"
   },
