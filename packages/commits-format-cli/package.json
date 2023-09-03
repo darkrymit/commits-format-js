@@ -10,7 +10,7 @@
   "description": "Create formatted commit messages according to maintainers with one cli command",
   "repository": {
     "type": "git",
-    "url": "https://github.com/darkrymit",
+    "url": "https://github.com/darkrymit/commits-format-js",
     "directory": "packages/commits-format-cli"
   },
   "author": "DarkRymit <t64566t@gmail.com>",
