@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "moduleResolution": "node16",
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": false,
+    "outDir": "./dist"
+  },
+  "exclude": [
+    "./dist","node_modules"]
+}

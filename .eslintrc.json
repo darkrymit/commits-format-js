@@ -1,0 +1,36 @@
+{
+  "env": {
+    "es2019": true,
+    "node": true
+  },
+  "extends": "standard-with-typescript",
+  "rules": {
+    "@typescript-eslint/semi": [
+      "error",
+      "always"
+    ],
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": true
+        }
+      }
+    ],
+    "@typescript-eslint/quotes": [
+      "error",
+      "single"
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/comma-dangle": "off",
+    "@typescript-eslint/space-before-function-paren": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "eqeqeq": "off"
+  }
+}

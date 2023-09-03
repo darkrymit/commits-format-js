@@ -1,0 +1,87 @@
+{
+  "version": "0.1.0",
+  "formats": [
+    {
+      "name": "default",
+      "description": "Default commits template based on Conventional Commits",
+      "variables": [
+        {
+          "name": "type",
+          "type": "select",
+          "description": "Type of the commit",
+          "prompt": "Select type of the commit",
+          "items": {
+            "type": "string"
+          },
+          "enum": [
+            "feat",
+            "fix",
+            "docs",
+            "style",
+            "refactor",
+            "perf",
+            "test",
+            "chore"
+          ],
+          "initial": "feat",
+        },
+        {
+          "name": "scope",
+          "type": "multiselect",
+          "description": "Scopes of the commit",
+          "prompt": "Select scopes of the commit",
+          "items": {
+            "type": "string"
+          },
+          "enum": [
+            "cli",
+            "docs",
+            "examples"
+          ],
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Short description of the commit",
+          "prompt": "Enter short description of the commit",
+          "optional": false
+        },
+        {
+          "name": "body",
+          "type": "string",
+          "description": "Long description of the commit",
+          "prompt": "Enter long description of the commit",
+          "optional": true
+        },
+        {
+          "name": "breaking.enabled",
+          "type": "boolean",
+          "description": "Breaking changes indicator",
+          "prompt": "Is includes a breaking changes?",
+        },
+        {
+          "name": "breaking.descriptions",
+          "type": "array",
+          "description": "Description of the breaking changes",
+          "prompt": "Enter descriptions of the breaking changes",
+          "items": {
+            "type": "string",
+            "prompt": "Enter description of the breaking changes"
+          },
+          "includeOn": {
+            "mode": "true",
+            "name": "breaking.enabled"
+          }
+        }
+      ],
+      "template": {
+        "mode": "string-literal",
+        "string": "\
+${type}${scope?.length ? `(${scope.join(', ')})` : ''}${breaking?.enabled ? '!' : ''}: ${description}\
+${body ? `\n\n${body}` : ''}\
+${breaking?.enabled ? `\n` : ''}\
+${breaking?.enabled ? `${breaking.descriptions.map((s)=> `\nBREAKING CHANGE: ${s}`)}` : ''}"
+      }
+    }
+  ]
+}
