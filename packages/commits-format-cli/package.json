@@ -1,5 +1,5 @@
 {
-  "name": "commits-format-cli",
+  "name": "@darkrymit/commits-format-cli",
   "version": "0.1.0",
   "keywords": [
     "git",
